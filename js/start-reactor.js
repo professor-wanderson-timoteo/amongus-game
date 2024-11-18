@@ -18,7 +18,6 @@ startReactor = {
             const audio = new Audio(file)
             audio.load()
             return audio
-
         },
 
         loadAudios() {
@@ -29,10 +28,7 @@ startReactor = {
             startReactor.audio.complete = startReactor.audio.loadAudio(startReactor.audio.complete)
             startReactor.audio.fail = startReactor.audio.loadAudio(startReactor.audio.fail)
             startReactor.audio.combinations = startReactor.audio.combinations.map ( (audio) => startReactor.audio.loadAudio(audio))
-
         }
-        
-
     },
     interface: {
 
@@ -55,7 +51,6 @@ startReactor = {
                 computerLedPanel.children[i].classList.remove("ledOn");
                 playerLedPanel.children[i].classList.remove("ledOn");
             }
-
         },
 
         async start() {
@@ -106,9 +101,7 @@ startReactor = {
                         ledPanel.children[i].classList.remove(typeClasses[1])
                     }
                 }, 900);
-
             })
-
         },
 
         enableButtons() {
@@ -120,7 +113,6 @@ startReactor = {
                 if (playerMemory.children[i].tagName == "DIV")
                     playerMemory.children[i].classList.add("playerMemoryActive")
             }
-
         },
 
         disableButtons() { 
@@ -132,10 +124,7 @@ startReactor = {
             if (playerMemory.children[i].tagName == "DIV")
                 playerMemory.children[i].classList.remove("playerMemoryActive");
             }
-
         },
-        
-
     },
 
     async load() {
@@ -157,11 +146,8 @@ startReactor = {
                     setTimeout(() => element.style.animation = "", 400)
                 }
                 })  
-
             })
         })
-
-
      },
     start() {
 
@@ -173,7 +159,6 @@ startReactor = {
                 startReactor.playCombination()
             }, 500)
         })
-
     },
     
     createCombination() {
@@ -184,7 +169,6 @@ startReactor = {
             newCombination.push(position-1)
         }
         return newCombination
-
     },
 
     play(index) {
@@ -239,14 +223,11 @@ startReactor = {
             startReactor.interface.turnAllLedsOff()
             startReactor.interface.enableButtons()
         }, 600 * startReactor.computerCombinationPosition)
-
      },
     
     isTheRightCombination(position) {
         
         let computerCombination = startReactor.computerCombination.slice(0, position)
         return ( computerCombination.toString() == startReactor.playerCombination.toString())
-
     },
-
 }
